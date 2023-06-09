@@ -1,0 +1,7 @@
+.button-edit {
+  background-image: url(../../images/Edit-button.svg);
+  width: 24px;
+  height: 24px;
+  background-size: 10px;
+  border: 1px solid #FFFFFF;
+}

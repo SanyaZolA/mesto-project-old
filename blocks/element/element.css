@@ -1,0 +1,7 @@
+.element {
+  list-style-type: none;
+  margin: 0 auto 0 auto;
+  padding: 0;
+  border-radius: 10px;
+  overflow: hidden;
+}

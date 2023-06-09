@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Страница для размещения фотографий">
+  <meta name="keywords" content="Любимые фото, картинки, лайк, редактирование, измение профиля">
+  <meta name="author" content="Сергеев Александр">
+  <title>Mesto Russia</title>
+  <link href="./pages/index.css" rel="stylesheet" />
+</head>
+
+<body class="page">
+  <header class="header">
+    <img class="header__logo" src="./images/logo.svg" alt="Логотип Mesto"></img>
+  </header>
+  <main class="content">
+    <section class="profile">
+      <div class="profile__block">
+        <img class="profile__avatar" src="./images/kusto.png" alt="Аватарка пользователя">
+      </div>
+      <div class="profile__info">
+        <div class="profile__name-block">
+          <h1 class="profile__name">Жак-Ив Кусто</h1>
+          <button class="button button-edit" type="button"></button>
+        </div>  
+        <p class="profile__who">Исследователь океана</p>
+      </div>
+      <button class="button button-add" type="button"></button>
+    </section>
+    <section class="elements">
+      <ul class="element__list">
+        <li class="element">
+          <img class="element__foto" src="./images/karach.png" alt="Старинное здание в горах">
+          <div class="element__info">
+            <h2 class="element__title">Карачаевск</h2>
+            <button class="button button-like" type="button"></button>
+          </div>
+        </li>
+        <li class="element">
+          <img class="element__foto" src="./images/lofoten.jpg" alt="Озеро Лофотен">
+          <div class="element__info">
+            <h2 class="element__title">Озеро Лофотен</h2>
+            <button class="button button-like" type="button"></button>
+          </div>
+        </li>
+        <li class="element">
+          <img class="element__foto" src="./images/vodopad.jpg" alt="Загадочный водопад">
+          <div class="element__info">
+            <h2 class="element__title">Водопад загадка</h2>
+            <button class="button button-like" type="button"></button>
+          </div>
+        </li>
+        <li class="element">
+          <img class="element__foto" src="./images/Dombay.png" alt="Лес на фоне гор">
+          <div class="element__info">
+            <h2 class="element__title">Домбай</h2>
+            <button class="button button-like" type="button"></button>
+          </div>
+        </li>
+        <li class="element">
+          <img class="element__foto" src="./images/JavaScript.jpg" alt="Львица открыла рот и смотрит в небо">
+          <div class="element__info">
+            <h2 class="element__title">JavaScript (ААА)</h2>
+            <button class="button button-like" type="button"></button>
+          </div>
+        </li>
+        <li class="element">
+          <img class="element__foto" src="./images/sukor.jpg" alt="Сувок смотрить в даль">
+          <div class="element__info">
+            <h2 class="element__title">Серьезный сурок на охоте</h2>
+            <button class="button button-like" type="button"></button>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <footer class="footer">
+    <p class="footer__copyright">&copy; 2023. Mesto Russia</p>
+  </footer>
+</body>
+
+</html>

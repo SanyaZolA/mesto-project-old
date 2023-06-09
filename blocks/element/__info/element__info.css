@@ -1,0 +1,7 @@
+.element__info {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 15px 24px 21px;
+  margin: 0;
+}
