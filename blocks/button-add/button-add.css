@@ -6,3 +6,9 @@
   border: 2px solid #FFFFFF;
   border-radius: 2px;
 }
+
+@media screen and (max-width: 650px) {
+  .button-add {
+    width: 282px;
+  }
+}

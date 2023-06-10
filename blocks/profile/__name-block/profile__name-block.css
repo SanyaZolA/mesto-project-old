@@ -1,3 +1,11 @@
 .profile__name-block {
   display: flex;
+  margin: 0 0 16px 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 650px) {
+  .profile__name-block {
+    margin: 22.25px 0 14px 0;
+  }
 }
