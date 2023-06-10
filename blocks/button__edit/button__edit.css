@@ -1,13 +1,13 @@
-.button-edit {
-  background-image: url(../../images/Edit-button.svg);
+.button__edit {
+  background-image: url(../../images/button-edit.svg);
   width: 24px;
   height: 24px;
   background-size: 10px;
   border: 1px solid #FFFFFF;
 }
 
-@media screen and (max-width: 650px) {
-  .button-edit {
+@media screen and (max-width: 690px) {
+  .button__edit {
     width: 18px;
     height: 18px;
     background-size: 7.5px;

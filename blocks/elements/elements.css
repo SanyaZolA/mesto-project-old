@@ -4,7 +4,7 @@
     padding: 0;
 }
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 900px) {
   .elements {
     max-width: calc(282px*2 + 17px);
     }

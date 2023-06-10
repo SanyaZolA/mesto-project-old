@@ -10,12 +10,6 @@
 
 @media screen and (max-width: 900px) {
   .element__list {
-    column-gap: 10px;
-  }
-}
-
-@media screen and (max-width: 883px) {
-  .element__list {
     grid-template-columns: 282px 282px;
     column-gap: 17px;
   }

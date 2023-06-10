@@ -1,5 +1,5 @@
 .button {
-    background-color: black;
+    background-color: transparent;
     transition: opacity .1s linear;
     background-repeat: no-repeat;
     background-position: center;

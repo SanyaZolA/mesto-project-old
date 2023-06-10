@@ -6,8 +6,15 @@
   grid-template-columns: 120px 1fr 150px;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 900px) {
   .profile {
+    margin: 0 27px 51px 27px;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .profile {
+    margin: 0 0 51px 0;
     grid-template-columns: 1fr;
     justify-items:  center;
   }

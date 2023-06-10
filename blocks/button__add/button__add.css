@@ -1,5 +1,5 @@
-.button-add {
-  background-image: url(../../images/add-dutton.svg);
+.button__add {
+  background-image: url(../../images/button-add.svg);
   width: 150px;
   height: 50px;
   background-size: 22px;
@@ -7,8 +7,8 @@
   border-radius: 2px;
 }
 
-@media screen and (max-width: 650px) {
-  .button-add {
+@media screen and (max-width: 690px) {
+  .button__add {
     width: 282px;
   }
 }

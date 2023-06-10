@@ -4,7 +4,7 @@
   padding: 0;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 690px) {
   .profile__name-block {
     margin: 22.25px 0 14px 0;
   }
