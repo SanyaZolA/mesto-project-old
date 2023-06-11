@@ -1,4 +1,4 @@
-.element__list {
+.elements__list {
   display: grid;
   grid-template-columns: 282px 282px 282px;
   grid-template-rows: max-content;
@@ -9,14 +9,14 @@
 }
 
 @media screen and (max-width: 900px) {
-  .element__list {
+  .elements__list {
     grid-template-columns: 282px 282px;
     column-gap: 17px;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .element__list {
+  .elements__list {
     grid-template-columns: minmax(282px, 1fr);
   }
 }
