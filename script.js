@@ -6,7 +6,8 @@ const inputAbout = document.querySelector('.popup__input_type_about');
 const profileEditButtonOpen = document.querySelector('.profile__edit-button');
 const closeProfileButton = document.querySelector('section.popup__profile .popup__close-button');
 const closeFotoButton = document.querySelector('section.popup__addfoto .popup__close-button');
-const profileEditButtonSave = document.querySelector('.popup__save-button');
+const saveProfileButton = document.querySelector('section.popup__profile .popup__save-button');
+const saveFotoButton = document.querySelector('section.popup__addfoto .popup__save-button');
 const profileName = document.querySelector('.profile__name');
 const profileWho = document.querySelector('.profile__who')
 const fotoAdd = document.querySelector('.profile__add-button');
@@ -24,12 +25,11 @@ closeProfileButton.addEventListener('click', closePopupProfile);
 
 function closePopupProfile() {
   popupProfile.classList.remove('popup_opened');
-  return closePopup1;
 }
 //----------------------ЗАКРЫТИЕ ПОПАПА ЧЕРЕЗ СОХРАНИТЬ И СОХРАНЕНИЕ ИНФОРМАЦИИ------------------------------
-profileEditButtonSave.addEventListener('click', savePopup);
+saveProfileButton.addEventListener('click', saveProfilePopup);
 
-function savePopup(evt) {
+function saveProfilePopup(evt) {
   evt.preventDefault()
   popupProfile.classList.remove('popup_opened');
   if (inputName.value.length != 0 && inputAbout.value.length == 0) { 
@@ -39,8 +39,7 @@ function savePopup(evt) {
   } else if (inputName.value.length != 0 && inputAbout.value.length != 0) { 
     profileName.textContent = `${inputName.value}`
     profileWho.textContent = `${inputAbout.value}`
-}
-return savePopup;
+ }
 }
 
 //----------------------ОТКРЫТИЕ ПОПАПА (добавление картинок)------------------------------
@@ -48,14 +47,20 @@ fotoAdd.addEventListener('click', openAddFoto);
 
 function openAddFoto() {
   popupAddFoto.classList.add('popup_opened');
-  inputName.value = '';
-  inputAbout.value = '';
+  console.log(inputName);
 }
 
 //----------------------ЗАКРЫТИЕ ПОПАПА ЧЕРЕЗ КРЕСТ (добавление картинок)------------------------------
-  closeFotoButton.addEventListener('click', closePopupAddFoto);
+closeFotoButton.addEventListener('click', closePopupAddFoto);
 
-  function closePopupAddFoto() {
-    popupAddFoto.classList.remove('popup_opened');
-    return closePopup;
-  }
+function closePopupAddFoto() {
+  popupAddFoto.classList.remove('popup_opened');
+}
+
+//----------------------ЗАКРЫТИЕ ПОПАПА ЧЕРЕЗ СОЗДАТЬ (добавление картинок)------------------------------
+saveFotoButton.addEventListener('click', saveFotoPopup);
+
+function saveFotoPopup(evt) {
+  evt.preventDefault()
+  popupAddFoto.classList.remove('popup_opened');
+}
