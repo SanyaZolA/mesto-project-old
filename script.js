@@ -47,7 +47,6 @@ fotoAdd.addEventListener('click', openAddFoto);
 
 function openAddFoto() {
   popupAddFoto.classList.add('popup_opened');
-  console.log(inputName);
 }
 
 //----------------------ЗАКРЫТИЕ ПОПАПА ЧЕРЕЗ КРЕСТ (добавление картинок)------------------------------
