@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Страница для размещения фотографий">
-  <meta name="keywords" content="Любимые фото, картинки, лайк, редактирование, измение профиля">
+  <meta name="keywords" content="Любимые фото, картинки, лайк, редактирование, измение профиля, удаление картинок">
   <meta name="author" content="Сергеев Александр">
   <title>Mesto</title>
   <link href="./pages/index.css" rel="stylesheet" />
@@ -22,84 +22,66 @@
         <div class="profile__name-block">
           <h1 class="profile__name">Жак-Ив Кусто</h1>
           <button class="button profile__edit-button" type="button"></button>
-        </div>  
+        </div>
         <p class="profile__who">Исследователь океана</p>
       </div>
       <button class="button profile__add-button" type="button"></button>
     </section>
-    <section class="elements">
-      <ul class="elements__list">
-        <li class="element">
-          <img class="element__foto" src="./images/karach.png" alt="Старинное здание в горах">
-          <div class="element__info">
-            <h2 class="element__title">Карачаевск</h2>
-            <button class="button element__like-button" type="button"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img class="element__foto" src="./images/lofoten.jpg" alt="Озеро Лофотен">
-          <div class="element__info">
-            <h2 class="element__title">Озеро Лофотен</h2>
-            <button class="button element__like-button" type="button"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img class="element__foto" src="./images/vodopad.jpg" alt="Загадочный водопад">
-          <div class="element__info">
-            <h2 class="element__title">Водопад загадка</h2>
-            <button class="button element__like-button" type="button"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img class="element__foto" src="./images/Dombay.png" alt="Лес на фоне гор">
-          <div class="element__info">
-            <h2 class="element__title">Домбай</h2>
-            <button class="button element__like-button" type="button"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img class="element__foto" src="./images/JavaScript.jpg" alt="Львица открыла рот и смотрит в небо">
-          <div class="element__info">
-            <h2 class="element__title">JavaScript (ААА)</h2>
-            <button class="button element__like-button" type="button"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img class="element__foto" src="./images/sukor.jpg" alt="Сувок смотрить в даль">
-          <div class="element__info">
-            <h2 class="element__title">Серьезный сурок на охоте</h2>
-            <button class="button element__like-button" type="button"></button>
-          </div>
-        </li>
-      </ul>
+    <section class="element">
+      <ul class="element__list"></ul>
     </section>
   </main>
   <footer class="footer">
-    <p class="footer__copyright">&copy; 2023. Mesto Russia</p>
+    <p class="footer__copyright">&copy; 2023. Александр Сергеев</p>
   </footer>
-  <section class="popup popup__profile">
+
+  <section class="popup" id="popup__profile">
     <div class="popup__container">
-      <button class="button popup__close-button profile" type="button"></button>
+      <button class="button popup__close-button" type="button"></button>
       <h2 class="popup__title">Редактировать профиль</h2>
       <form class="popup__input-form">
-        <input class="popup__input  popup__input_type_name" type="text" value="Жак-Ив Кусто" placeholder="Имя">
-        <input class="popup__input  popup__input_type_about" type="text" value="Исследователь океана" placeholder="О себе">
-        <button class="button popup__save-button" type="submit">Сохранить</button> 
+        <input class="popup__input  popup__input_type_name" type="text" value="Жак-Ив Кусто" required name="nameInput">
+        <input class="popup__input  popup__input_type_about" type="text" value="Исследователь океана" required
+          name="imageInput">
+        <button class="button popup__save-button" type="submit">Сохранить</button>
       </form>
     </div>
   </section>
-  <section class="popup popup__addfoto">
+
+  <section class="popup" id="popup__addfoto">
     <div class="popup__container">
-      <button class="button popup__close-button close" type="button"></button>
+      <button class="button popup__close-button" type="button"></button>
       <h2 class="popup__title">Новое место</h2>
       <form class="popup__input-form">
         <input class="popup__input  popup__input_type_name" type="text" placeholder="Название">
-        <input class="popup__input  popup__input_type_about" type="text" placeholder="Ссылка на картинку">
-        <button class="button popup__save-button" type="submit">Создать</button> 
+        <input class="popup__input  popup__input_type_link" type="text" placeholder="Ссылка на картинку">
+        <button class="button popup__save-button" type="submit">Создать</button>
       </form>
     </div>
   </section>
-  <script src="script.js"></script>
+
+  <section class="popup popup__zoom">
+    <div class="popup__zoom-container">
+      <button class="button popup__close-button" type="button"></button>
+      <figure class="popup__zoom-figure">
+        <img class="popup__zoom-image">
+        <figcaption class="popup__zoom-signature"></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <template class="element__template">
+    <li class="element__post">
+      <img class="element__foto">
+      <button class="button element__trash-button" type="button"></button>
+      <div class="element__info">
+        <h2 class="element__title"></h2>
+        <button class="button element__like-button" type="button"></button>
+      </div>
+    </li>
+  </template>
+
+  <script src="./script/script.js"></script>
 </body>
 
 </html>
