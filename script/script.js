@@ -33,33 +33,12 @@ const signatureZoom = popupZoom.querySelector('.popup__zoom-signature'); // дл
 const elementList = document.querySelector('.element__list'); // вешаем элемент списка на переменную.
 const elementTemplate = document.querySelector('.element__template').content; // переменная получает данные из блока HTML template
 
-// //----------------------------------ФУНКЦИИ ДЛЯ ОТКРЫТИЯ И ЗАКРЫТИЯ ПОПАПОВ-----------------------------------------------------
-function openPopupProfile() {
-  popupProfile.classList.add('popup_opened')};          // функция для открытия ред. профиля - добавляется класс 'popup_opened'.
-  
-function closePopupProfile() {
-  popupProfile.classList.remove('popup_opened')};       // функция для закрытия ред. профиля - убирается класс 'popup_opened'.
-  
-function openPopupFoto() {
-  popupAddFoto.classList.add('popup_opened')};          // функция для открытия окна 'добавление фото' - добавляется класс 'popup_opened'.
-    
-function closePopupFoto() {
-  popupAddFoto.classList.remove('popup_opened')};       // функция для закрытия окна 'добавление фото' - убирается класс 'popup_opened'.
-
-function closeZoomFoto() {
-  popupZoom.classList.remove('popup_opened')};          // функция для закрытия окна зума - убирается класс 'popup_opened'.
-
-function likeButton(evt) {
-  evt.target.classList.toggle('element__like-button_active')};  // функция для включения/выключения лайков.
-
-function closeNewElement(evt) {
-  evt.target.closest('.element__post').remove()};               // функция для закрытия нового элемента.
-
+// //----------------------------------ФУНКЦИИ-------------------------------------------------------------------------------------
 function openPopup(popup) {
-  popup.classList.add('popup_opened')};                        // функция для открытия(многоразовая).
+  popup.classList.add('popup_opened')};                        // функция для открытия.
 
 function closePopup(popup) {
-  popup.classList.remove('popup_opened')};                        // функция для открытия(многоразовая).
+  popup.classList.remove('popup_opened')};                     // функция для открытия(многоразовая).
 
 function openZoomPopup(evt) {                                // функция для открытия зума
   imageZoom.src = evt.target.src;                            // берет ссылку из определенного поста (кликнутого);
@@ -77,13 +56,13 @@ function formAddNewFoto(evt) {                                                  
 formAddFoto.addEventListener('submit', formAddNewFoto);                         // вешаем событие(закрыть) на событие 'sudmit' - отправка
 
 // //----------------------------------ОТКРЫТИЕ/ЗАКРЫТИЕ ПОПАПОВ ПРОФИЛЯ И КАРТИНОК------------------------------------------------
-buttonEditPopupProfile.addEventListener('click', openPopupProfile );    // вешаем событие(открыть) редактирование профиля на клик мыши.
-buttonClosePopupProfile.addEventListener('click', closePopupProfile);  // вешаем событие(закрыть) редактирование профиля на клик мыши.
+buttonEditPopupProfile.addEventListener('click', () => {popupProfile.classList.add('popup_opened')});    // вешаем событие(открыть) редактирование профиля на клик мыши.
+buttonClosePopupProfile.addEventListener('click', () => {popupProfile.classList.remove('popup_opened')});  // вешаем событие(закрыть) редактирование профиля на клик мыши.
 
-buttonOpenPopupAddFoto.addEventListener('click', openPopupFoto);       // вешаем событие(открыть) добавление картинок на клик мыши.
-buttonClosePopupAddFoto.addEventListener('click', closePopupFoto);     // вешаем событие(закрыть) добавление картинок на клик мыши.
+buttonOpenPopupAddFoto.addEventListener('click', () => {popupAddFoto.classList.add('popup_opened')});       // вешаем событие(открыть) добавление картинок на клик мыши.
+buttonClosePopupAddFoto.addEventListener('click', () => {popupAddFoto.classList.remove('popup_opened')});     // вешаем событие(закрыть) добавление картинок на клик мыши.
 
-buttonClosePopupZoom.addEventListener('click', closeZoomFoto);         // вешаем событие(закрыть) зум на клик мыши.
+buttonClosePopupZoom.addEventListener('click', () => {popupZoom.classList.remove('popup_opened')});         // вешаем событие(закрыть) зум на клик мыши.
 
 // //----------------------------------СОХРАНЕНИЕ ИНФОРМАЦИИ ПРИ РЕДАКТИРОВАНИИ ПРОФИЛЯ--------------------------------------------
 function saveProfilePopup (evt) {
@@ -117,8 +96,8 @@ function createNewPost(postName, imageLink) {
   postImage.src = imageLink;                                           // Элемент фото template получает данные из параментов функции.
   postImage.alt = postName;                                             // Элемент фото template получает данные из параментов функции.
   onePost.querySelector('.element__title').textContent = postName;                         // ищем класс и добавляем туда новый параметр                   
-  onePost.querySelector('.element__like-button').addEventListener('click', likeButton);         // ищем класс и вешаем кнопку лайка
-  onePost.querySelector('.element__trash-button').addEventListener('click', closeNewElement);   // ищем класс и вышаем кнопку удаления
+  onePost.querySelector('.element__like-button').addEventListener('click', (evt) => {evt.target.classList.toggle('element__like-button_active')});         // ищем класс и вешаем кнопку лайка
+  onePost.querySelector('.element__trash-button').addEventListener('click', (evt) => {evt.target.closest('.element__post').remove()});   // ищем класс и вышаем кнопку удаления
   postImage.addEventListener('click', openZoomPopup);                     // вешаем возможность делать зум-зум.
   return onePost;
 };
