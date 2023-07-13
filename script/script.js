@@ -28,7 +28,7 @@ const formAddFoto = popupAddFoto.querySelector('.popup__input-form');  // фор
 // //----------------------------------НАХОЖДЕНИЕ КАРТИНОК/ТЕКСТА ДЛЯ ЗУМА----------------------------------------------------------------
 const imageZoom = popupZoom.querySelector('.popup__zoom-image');  // для зума ищем элемент картинки
 const signatureZoom = popupZoom.querySelector('.popup__zoom-signature'); // для зума ищем элемент подписи
-
+  
 // //----------------------------------НАХОЖДЕНИЕ МЕСТА РАСПОЛОЖЕНИЕ ЛИСТА В HTML И ЭЛЕМЕНТ КАРТОЧКИ-------------------------------
 const elementList = document.querySelector('.element__list'); // вешаем элемент списка на переменную.
 const elementTemplate = document.querySelector('.element__template').content; // переменная получает данные из блока HTML template
@@ -86,8 +86,8 @@ buttonClosePopupAddFoto.addEventListener('click', closePopupFoto);     // веш
 buttonClosePopupZoom.addEventListener('click', closeZoomFoto);         // вешаем событие(закрыть) зум на клик мыши.
 
 // //----------------------------------СОХРАНЕНИЕ ИНФОРМАЦИИ ПРИ РЕДАКТИРОВАНИИ ПРОФИЛЯ--------------------------------------------
-function saveProfilePopup (e) {
-  e.preventDefault();                                          // отмена стандартной формы отправки.
+function saveProfilePopup (evt) {
+  evt.preventDefault();                                          // отмена стандартной формы отправки.
   profileName.textContent = inputNameProfile.value;              // сохранение введенной информации ФИО и замена в профиле.
   profileWho.textContent = inputAboutProfile.value;              // сохранение введенной информации О СЕБЕ и замена в профиле.
   closePopup(popupProfile);      
@@ -124,7 +124,7 @@ function createNewPost(postName, imageLink) {
 };
 
 function initializeList(list) {                                     // создаётся список картинок для отображения на странице.
-  list.forEach(function (item) {                                    // в списке для каждого элемента выполняется функция.
+  list.forEach(function (item) {                                    // обход всего списка и для каждого элемента выполняется функция.
     const onePost = createNewPost(item.name, item.link);            // получает название и ссылку. Формируется пост. 6 раз
     elementList.append(onePost);                                    // каждая картинки ставится в начало листа template.
   });
