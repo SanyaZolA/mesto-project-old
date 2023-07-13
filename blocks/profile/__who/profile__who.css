@@ -7,7 +7,17 @@
   padding: 0;
 }
 
-@media screen and (max-width: 690px) {
+@media screen and (max-width: 750px) {
+  .profile__who {
+  max-width: 300px;
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 36px;
+  text-align: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
   .profile__who {
   max-width: 282px;
   font-size: 14px;

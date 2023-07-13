@@ -6,7 +6,15 @@
   border: 1px solid #FFFFFF;
 }
 
-@media screen and (max-width: 690px) {
+@media screen and (max-width: 750px) {
+  .profile__edit-button {
+    width: 21px;
+    height: 21px;
+    background-size: 7.5px;
+  }
+}
+
+@media screen and (max-width: 600px) {
   .profile__edit-button {
     width: 18px;
     height: 18px;
