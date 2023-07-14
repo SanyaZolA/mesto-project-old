@@ -6,9 +6,8 @@ const popupZoom = document.querySelector('.popup__zoom');   // присваив�
 
 // //----------------------------------НАХОЖДЕНИЕ КНОПОК---------------------------------------------------------------------------
 const buttonEditPopupProfile = content.querySelector('.profile__edit-button'); // открытие редактирования профиля.
-const buttonClosePopupProfile = popupProfile.querySelector('.popup__close-button'); // закрытие редактирования профиля через крест.
 const buttonOpenPopupAddFoto = content.querySelector('.profile__add-button');  // открытие добавления картинки.
-const buttonClosePopupAddFoto = popupAddFoto.querySelector('.popup__close-button'); // закрытие добавления картинки черз крест.
+const closeButtons = document.querySelectorAll('.popup__close-button');         // вешаем закрытие крестик на переменную
 const buttonClosePopupZoom = popupZoom.querySelector('.popup__close-button');       // закрытие зума картинки через крест.
 
 // //----------------------------------НАХОЖДЕНИЕ ИНПУТОВ ДЛЯ ВВОДА ИНФОРМАЦИИ-----------------------------------------------------
@@ -32,7 +31,6 @@ const signatureZoom = popupZoom.querySelector('.popup__zoom-signature'); // дл
 // //----------------------------------НАХОЖДЕНИЕ МЕСТА РАСПОЛОЖЕНИЕ ЛИСТА В HTML И ЭЛЕМЕНТ КАРТОЧКИ-------------------------------
 const elementList = document.querySelector('.element__list'); // вешаем элемент списка на переменную.
 const elementTemplate = document.querySelector('.element__template').content; // переменная получает данные из блока HTML template
-
 // //----------------------------------ФУНКЦИИ-------------------------------------------------------------------------------------
 function openPopup(popup) {
   popup.classList.add('popup_opened')};                        // функция для открытия.
@@ -47,22 +45,29 @@ function openZoomPopup(evt) {                                // функция �
   openPopup(popupZoom);                                       // и собственно открываем.
 };
 
-function formAddNewFoto(evt) {                                                  // заполненная форма встаёт в список.
+function openPopupPost () {                                   // открытие пустого профиля.
+  inputNameProfile.value = null;
+  inputAboutProfile.value = null;
+  openPopup(popupProfile)
+}
+
+closeButtons.forEach((button) => {                           // автоматическая обработка кнопок закрытия 'крест '
+  const popup = button.closest('.popup');
+  button.addEventListener('click', () => closePopup(popup));
+});
+
+function handleAddFormSubmit(evt) {                                                  // заполненная форма встаёт в список.
   evt.preventDefault();                                                          // сброс стандартной отправки
-  const newElement = createNewPost(inputNameFoto.value, inputLinkFoto.value);  // берёт то что заполнили в форме в добавляем в переменную
+  const newElement = createNewPost(inputNameFoto.value, inputLinkFoto.value);  // берёт то что заполнили в форме и добавляем в переменную
   elementList.prepend(newElement);                                              // новый пост идёт в начало листа.
   closePopup(popupAddFoto)                                                      // делает функцию для закрытия.
+  evt.target.reset()                                                           // сбрасывает форму.
 };
-formAddFoto.addEventListener('submit', formAddNewFoto);                         // вешаем событие(закрыть) на событие 'sudmit' - отправка
+formAddFoto.addEventListener('submit', handleAddFormSubmit);                         // вешаем событие(закрыть) на событие 'sudmit' - отправка
 
-// //----------------------------------ОТКРЫТИЕ/ЗАКРЫТИЕ ПОПАПОВ ПРОФИЛЯ И КАРТИНОК------------------------------------------------
-buttonEditPopupProfile.addEventListener('click', () => {popupProfile.classList.add('popup_opened')});    // вешаем событие(открыть) редактирование профиля на клик мыши.
-buttonClosePopupProfile.addEventListener('click', () => {popupProfile.classList.remove('popup_opened')});  // вешаем событие(закрыть) редактирование профиля на клик мыши.
-
+// //----------------------------------ОТКРЫТИЕ ПОПАПОВ ПРОФИЛЯ И КАРТИНОК------------------------------------------------
+buttonEditPopupProfile.addEventListener('click', openPopupPost);    // вешаем событие(открыть) редактирование профиля на клик мыши.
 buttonOpenPopupAddFoto.addEventListener('click', () => {popupAddFoto.classList.add('popup_opened')});       // вешаем событие(открыть) добавление картинок на клик мыши.
-buttonClosePopupAddFoto.addEventListener('click', () => {popupAddFoto.classList.remove('popup_opened')});     // вешаем событие(закрыть) добавление картинок на клик мыши.
-
-buttonClosePopupZoom.addEventListener('click', () => {popupZoom.classList.remove('popup_opened')});         // вешаем событие(закрыть) зум на клик мыши.
 
 // //----------------------------------СОХРАНЕНИЕ ИНФОРМАЦИИ ПРИ РЕДАКТИРОВАНИИ ПРОФИЛЯ--------------------------------------------
 function saveProfilePopup (evt) {
