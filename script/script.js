@@ -45,9 +45,9 @@ function openZoomPopup(evt) {                                // функция �
   openPopup(popupZoom);                                       // и собственно открываем.
 };
 
-function openPopupPost () {                                   // открытие пустого профиля.
-  inputNameProfile.value = null;
-  inputAboutProfile.value = null;
+function openPopupPost () {                                   // открытие заполненого профиля.
+  inputNameProfile.value = profileName.textContent;
+  inputAboutProfile.value = profileWho.textContent;
   openPopup(popupProfile)
 }
 
@@ -67,7 +67,7 @@ formAddFoto.addEventListener('submit', handleAddFormSubmit);                    
 
 // //----------------------------------ОТКРЫТИЕ ПОПАПОВ ПРОФИЛЯ И КАРТИНОК------------------------------------------------
 buttonEditPopupProfile.addEventListener('click', openPopupPost);    // вешаем событие(открыть) редактирование профиля на клик мыши.
-buttonOpenPopupAddFoto.addEventListener('click', () => {popupAddFoto.classList.add('popup_opened')});       // вешаем событие(открыть) добавление картинок на клик мыши.
+buttonOpenPopupAddFoto.addEventListener('click', () => openPopup(popupAddFoto));       // вешаем событие(открыть) добавление картинок на клик мыши.
 
 // //----------------------------------СОХРАНЕНИЕ ИНФОРМАЦИИ ПРИ РЕДАКТИРОВАНИИ ПРОФИЛЯ--------------------------------------------
 function saveProfilePopup (evt) {
