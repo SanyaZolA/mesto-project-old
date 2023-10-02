@@ -81,7 +81,7 @@ formEditProfile.addEventListener('submit', saveProfilePopup);  // на форм�
 // //----------------------------------МАССИВ КАРТИНОВ------------------------------------------------------------------------------
 const initialCards = [                                         // добавляем в переменную массив картинок и названий.
   {name: 'Озеро Лофотен', 
-  link: 'https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2148&q=80'},
+  link: './images/ozerolofoten.avif'},
   {name: 'Нарвик', 
   link: 'https://images.unsplash.com/photo-1624704765317-8441d4141fd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80'},
   {name: 'Ирландия', 
