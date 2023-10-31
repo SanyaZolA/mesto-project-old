@@ -19,3 +19,10 @@
     translate: 0 5px;
   }
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  .profile__avatar:hover {
+    animation: changes 1s linear infinite alternate;
+    transform: scale(1.1);
+  }
+} 
